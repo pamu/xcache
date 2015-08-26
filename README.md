@@ -13,4 +13,17 @@ LRU cache
 
 5) Minimal locking
 
+# Cache operations from multiple threads
 ![XCache](https://raw.githubusercontent.com/pamu/xcache/master/images/xcache.png)
+
+# build and Run this project
+
+```
+    sbt clean compile run
+```
+
+# To run test cases
+
+```
+    sbt test
+```

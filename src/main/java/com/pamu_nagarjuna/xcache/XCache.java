@@ -21,7 +21,7 @@ public class XCache<K, V> implements Cache<K, V> {
      * Parametrised constructor
      * @param cacheSize
      */
-    public XCache(int cacheSize) {
+    public XCache(final int cacheSize) {
         this.cache = new LinkedHashMap<K, V>(cacheSize, 0.75f, true) {
             @Override
             protected boolean removeEldestEntry(Map.Entry eldest) {
@@ -72,5 +72,9 @@ public class XCache<K, V> implements Cache<K, V> {
         synchronized (cache) {
             return cache.get(k);
         }
+    }
+
+    public Map<K, V> getCache() {
+        return cache;
     }
 }
