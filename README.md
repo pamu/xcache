@@ -31,3 +31,7 @@ LRU cache
 # Performance Stats
 
 ![Stats](https://raw.githubusercontent.com/pamu/xcache/master/images/xcache-stats.png)
+
+# Optimised
+
+![Optimised](https://raw.githubusercontent.com/pamu/xcache/master/images/xcache-optimised.png)
