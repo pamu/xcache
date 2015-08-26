@@ -30,4 +30,4 @@ LRU cache
 
 # Performance Stats
 
-![Stats](https://raw.githubusercontent.com/pamu/xcache/performance-stats/images/xcache-stats.png)
+![Stats](https://raw.githubusercontent.com/pamu/xcache/master/images/xcache-stats.png)
