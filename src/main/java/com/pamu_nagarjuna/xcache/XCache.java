@@ -18,7 +18,7 @@ public class XCache<K, V> implements Cache<K, V> {
     private final Map<K, V> cache;
 
     /**
-     *
+     * Parametrised constructor
      * @param cacheSize
      */
     public XCache(int cacheSize) {
@@ -26,6 +26,18 @@ public class XCache<K, V> implements Cache<K, V> {
             @Override
             protected boolean removeEldestEntry(Map.Entry eldest) {
                 return size() > cacheSize;
+            }
+        };
+    }
+
+    /**
+     * Default constructor
+     */
+    public XCache() {
+        this.cache = new LinkedHashMap<K, V>(1000, 0.75f, true) {
+            @Override
+            protected boolean removeEldestEntry(Map.Entry eldest) {
+                return size() > 1000;
             }
         };
     }

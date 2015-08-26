@@ -7,6 +7,10 @@ import org.scalatest.FunSuite
  * Created by pnagarjuna on 26/08/15.
  */
 class XCacheFunSuite extends FunSuite {
+  test("testing capacity") {
+    val cache = new XCache[String, String](10000)
+  }
+
   test("testing get/put operation on int Cache") {
     val cache = new XCache[Int, Int](1000)
     cache put(1, 2)
