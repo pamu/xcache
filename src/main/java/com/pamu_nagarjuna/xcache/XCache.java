@@ -6,10 +6,21 @@ import java.util.Map;
 /**
  * Created by pnagarjuna on 25/08/15.
  */
+
+/**
+ *
+ * @param <K>
+ * @param <V>
+ */
 public class XCache<K, V> implements Cache<K, V> {
+
 
     private final Map<K, V> cache;
 
+    /**
+     *
+     * @param cacheSize
+     */
     public XCache(int cacheSize) {
         this.cache = new LinkedHashMap<K, V>(cacheSize, 0.75f, true) {
             @Override
@@ -18,10 +29,20 @@ public class XCache<K, V> implements Cache<K, V> {
             }
         };
     }
+
+    /**
+     *
+     * @param cache
+     */
     public XCache(Map<K, V> cache) {
         this.cache = cache;
     }
 
+    /**
+     *
+     * @param k
+     * @param v
+     */
     @Override
     public void put(K k, V v) {
         synchronized (cache) {
@@ -29,6 +50,11 @@ public class XCache<K, V> implements Cache<K, V> {
         }
     }
 
+    /**
+     *
+     * @param k
+     * @return
+     */
     @Override
     public V get(K k) {
         synchronized (cache) {
