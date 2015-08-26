@@ -45,7 +45,7 @@ public class Main {
 
                 getTime = getTime/100;
 
-                writer.println(tc + " " + (putTime) + " " + (getTime));
+                writer.println(tc + " " + (putTime/million) + " " + (getTime/million));
                 writer.flush();
                 xCache.getCache().clear();
             }
