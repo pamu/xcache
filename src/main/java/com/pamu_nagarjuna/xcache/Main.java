@@ -6,6 +6,5 @@ package com.pamu_nagarjuna.xcache;
 public class Main {
     public static void main(String ... args) {
         System.out.println("XCache");
-
     }
 }

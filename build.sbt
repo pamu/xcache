@@ -2,7 +2,7 @@ name := "xcache"
 
 version := "1.0"
 
-javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
+//javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 scalaVersion := "2.11.2"
 

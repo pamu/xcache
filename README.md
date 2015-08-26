@@ -9,3 +9,4 @@ LRU cache
 4) Thread safe (concurrency doesn't corrupt the data structure)
 
 
+![XCache](https://raw.githubusercontent.com/pamu/xcache/master/images/xcache.png)
