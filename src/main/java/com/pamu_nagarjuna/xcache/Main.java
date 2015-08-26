@@ -14,10 +14,12 @@ public class Main {
         System.out.println("XCache Performance analysis running ...");
         final int million = 1000000;
         XCache<Integer, Integer> xCache = new XCache<>(million);
-        for(int i = 0; i < million; i++) xCache.put(i, i);
-        File statsFile = new File(System.getProperty("user.home") + "/Desktop/stats.txt");
+        //for(int i = 0; i < million; i++) xCache.put(i, i);
+        File statsGet = new File(System.getProperty("user.home") + "/Desktop/statsGet.txt");
+        File statsPut = new File(System.getProperty("user.home") + "/Desktop/statsPut.txt");
         try {
-            PrintWriter writer = new PrintWriter(statsFile);
+            PrintWriter writerGet = new PrintWriter(statsGet);
+            PrintWriter writerPut = new PrintWriter(statsPut);
             for(int tc = 1; tc <= 10; tc ++) {
                 double getTime = 0;
                 double putTime = 0;
@@ -45,11 +47,14 @@ public class Main {
 
                 getTime = getTime/100;
 
-                writer.println(tc + " " + (putTime/million) + " " + (getTime/million));
-                writer.flush();
+                writerPut.println((putTime/million));
+                writerPut.flush();
+                writerGet.println((getTime/million));
+                writerGet.flush();
                 xCache.getCache().clear();
             }
-            writer.close();
+            writerGet.close();
+            writerPut.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.exit(0);
@@ -74,6 +79,7 @@ public class Main {
         long start = System.nanoTime();
         executorService.execute(runnable);
         long stop = System.nanoTime();
+        executorService.shutdown();
         return (stop - start);
     }
 }
